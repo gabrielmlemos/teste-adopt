@@ -2,6 +2,7 @@
 "use client";
 
 import { pageview } from "@/lib/gtm";
+import Head from "next/head";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
@@ -22,6 +23,18 @@ export default function Analytics() {
 
   return (
     <>
+      <Head>
+        <meta
+          name="adopt-website-id"
+          content="d46a250e-bc48-4b24-9860-36b890d01e22"
+        />
+      </Head>
+      <Script
+        id="adopt-script"
+        strategy="afterInteractive"
+        src="//tag.goadopt.io/injector.js?website_code=d46a250e-bc48-4b24-9860-36b890d01e22"
+        className="adopt-injector"
+      />
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=GTM-553Z7423`}
